@@ -5,6 +5,11 @@ border-collapse: collapse;
 
 }
 
+.ale{
+    border: 1px solid yellowgreen;
+/*La clase tiene preponderancia, es decir que cuando se ejecute, tendra prioridad sobre los otros selectores*/
+}
+
 /*
 *{
     border: 1px solid orange;
