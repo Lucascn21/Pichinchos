@@ -10,6 +10,12 @@ border-collapse: collapse;
 /*La clase tiene preponderancia, es decir que cuando se ejecute, tendra prioridad sobre los otros selectores*/
 }
 
+
+img{
+width:150px;
+height:110px;
+
+}
 /*
 *{
     border: 1px solid orange;
