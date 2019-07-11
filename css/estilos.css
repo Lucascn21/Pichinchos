@@ -1,4 +1,26 @@
-table, tr, td{
+table, tr, td, th{
 border: 1px solid red;
+border-collapse: collapse;
+/*esta propiedad unifica los bordes*/
 
 }
+
+/*
+*{
+    border: 1px solid orange;
+    border-collapse: collapse;
+*/
+
+/* Se estilan los elementos incluidos en la tabla y se colapsa el  border de la misma, en lugar de hacer todo como arriba en la primera linea
+
+table{
+    border-collapse: collapse;
+    esta propiedad unifica los bordes
+    }
+
+    tr, td, th{
+        border: 1px solid orange;
+        border-collapse: collapse;
+        esta propiedad unifica los bordes
+        
+        }*/
