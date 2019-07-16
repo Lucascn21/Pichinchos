@@ -11,10 +11,21 @@ border-collapse: collapse;
 }
 
 
+
+
 .yingyang{
 width: 400;
 height: 400;
+position: fixed;
+top: 10%;
+
 }
+
+#yang:hover{
+opacity: 0;
+
+}
+
 
 .cervezas{
 width:150px;
