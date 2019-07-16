@@ -1,0 +1,25 @@
+table, tr, td, th{
+    border: 1px solid red;
+    border-collapse: collapse;
+    /*esta propiedad unifica los bordes*/
+    
+    }
+
+#ENCABEZADO{
+    background-color: lightslategray; 
+position: fixed;
+top:0%;
+right:0%;
+
+}
+
+
+
+#Contenido{
+position: relative;
+top: 30%;
+margin-right:45%;
+border: 1px solid lightslategray    ;
+border-collapse: collapse;
+}
+
