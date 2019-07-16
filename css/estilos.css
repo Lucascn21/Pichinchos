@@ -6,20 +6,21 @@ border-collapse: collapse;
 }
 
 .ale{
-    border: 1px solid yellowgreen;
+    border: 1px soli    d yellowgreen;
 /*La clase tiene preponderancia, es decir que cuando se ejecute, tendra prioridad sobre los otros selectores*/
 }
 
 
-img{
+.yingyang{
+width: 400;
+height: 400;
+}
+
+.cervezas{
 width:150px;
 height:110px;
-
 }
-#yingyang{
 
-    
-}
 
 
 /*
