@@ -1,25 +1,36 @@
-table, tr, td, th{
+table,
+tr,
+td,
+th {
     border: 1px solid red;
     border-collapse: collapse;
     /*esta propiedad unifica los bordes*/
-    
-    }
-
-#ENCABEZADO{
-    background-color: lightslategray; 
-position: fixed;
-top:0%;
-right:0%;
-
 }
 
-
-
-#Contenido{
-position: relative;
-top: 30%;
-margin-right:45%;
-border: 1px solid lightslategray    ;
-border-collapse: collapse;
+#ENCABEZADO {
+    background-color: lightslategray;
+    position: fixed;
+    top: 0%;
+    right: 0%;
 }
 
+#Contenido {
+    position: relative;
+    top: 30%;
+    margin-right: 45%;
+    border: 1px solid lightslategray;
+    border-collapse: collapse;
+}
+
+.iconos {
+    width: 50px;
+    height: 50px;
+}
+
+.cervezas:hover {
+    opacity: 0.5;
+}
+
+ol {
+    padding-left: 2%;
+}
