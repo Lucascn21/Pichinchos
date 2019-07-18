@@ -10,6 +10,13 @@
 </head>
 
 <body>
+    <style>
+        body {
+            background-image: url("img/carretera.jpg");
+            background-size: cover;
+        }
+    </style>
+
     <DIV id="Encabezado">
         <table id="TablaDelEncabezado">
             <tbody>
@@ -27,7 +34,7 @@
     </DIV>
 
     <DIV id="Login">
-        <form action="">
+        <form id="FormDelLogin" action="">
             <H1>Banco Tiki Tiki</H1>
             <H2>Preparado como ningun otro</H2>
             <br> Nombre:
@@ -35,8 +42,9 @@
             <input type="text" name="nombre"><br> Contraseña:<br>
             <input type="text" name="contraseña">
             <br>
-            <input type="submit" value="login">
-            <input type="submit" value="registrarse">
+            <br>
+            <input id="boton" class="login" type="submit" value="login">
+            <input id="boton" class="registro" type="submit" value="registrarse">
             <br>
             <p>
                 <a href="LinkAReiniciarContraseña">Olvide mi contraseña</p></a>
