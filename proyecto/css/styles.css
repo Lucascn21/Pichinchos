@@ -22,7 +22,7 @@ th {
     position: fixed;
     top: 0%;
     width: 100%;
-    height: 5%;
+    height: 5%
 }
 
 #Login {
@@ -34,3 +34,6 @@ th {
     top: 30%;
     overflow: auto;
 }
+
+
+

@@ -34,3 +34,8 @@ th {
 ol {
     padding-left: 2%;
 }
+
+#iframeprueba{
+    border: 1px solid blue;
+    border-collapse: collapse;
+}
