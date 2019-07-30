@@ -1,3 +1,4 @@
+
 var pais = ['Mexico', 'España', 'Argentina', 'Chile', 'Colombia', 'Venezuela', 'Perú', 'Costa Rica'];
 /*
 En este ejemplo decimos que hemos declarado un array de 8 elementos.
@@ -7,7 +8,7 @@ pais[0], pais[1], pais[2], pais[3], pais[4], pais[5], pais[6] y pais[7].
 También podemos inicializar un array vacío de dos formas distintas:
 */
 var fruta = [];
-
+//Se pueden inicializar arrays vacios, no importa tipo de datos ni nada
 var fruta = new Array();
 
 
