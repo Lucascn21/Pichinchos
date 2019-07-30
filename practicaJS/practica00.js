@@ -3,7 +3,7 @@ var frase = " La tierra vive.";
 console.log(`La frase es: ${frase}`);
 
 var listaPalabras = frase.split(" ");
-//`` se hace ctrl alt / altGR y la tecla que esta lindante al enter (en este teclado de la notebook)
+//`` se hace ctrl alt / altGR y la tecla que esta lindante al enter (en este teclado de la notebook).
 console.log(`La lista de palabras tiene: ${listaPalabras.length}`);
 console.log(`Contiene la palabra tierra?: ${listaPalabras.includes("tierra")}`);
 console.log(`Contiene la palabra papa?: ${listaPalabras.includes("papa")}`);
