@@ -19,6 +19,24 @@ pais.join("---")
 //Push y Pop se corresponden a PILA
 //Shift y Unshift se corresponden a COLA
 
+var arr = [];
+arr[0] = "Jani";
+arr[1] = "Hege";
+arr[2] = "Stale";
+arr[3] = "Kai Jim";
+arr[4] = "Borge";
+
+//usando splice para insertar un item dentro de un array
+console.log(arr.join());
+arr.splice(2, 0, "Lene");
+console.log(arr.join());
+
+
+//arr.splice(index, 0, item); will insert item into arr at the specified index (deleting 0 items first, that is, it's just an insert).
+
+
+
+
 //El método push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
 var animals = ['pigs', 'goats', 'sheep'];
 
