@@ -15,7 +15,8 @@ pais.length;
 pais.splice(" "); //Nota: "Desaparece" lo que le pongamos por parametro
 pais.join("---")
 
-
+//Push y Pop se corresponden a PILA
+//Shift y Unshift se corresponden a COLA
 
 //El método push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.
 var animals = ['pigs', 'goats', 'sheep'];
