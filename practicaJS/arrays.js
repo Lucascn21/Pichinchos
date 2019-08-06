@@ -95,3 +95,11 @@ console.log(array1.unshift(4, 5));
 
 console.log(array1);
 // expected output: Array [4, 5, 1, 2, 3]
+
+
+var i = 0;
+while (i<array1.length){
+console.log(arr[i]);
+i++;
+
+}
