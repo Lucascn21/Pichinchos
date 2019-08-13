@@ -1,4 +1,4 @@
-function saludar(nombre){
+function saludar(nombre){ //El parametro recibido se llamara como se declare en esta parte
 console.log(`hola ${nombre}\n`);
 
 }
