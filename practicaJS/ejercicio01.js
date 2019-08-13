@@ -11,10 +11,15 @@
  function sumaMuestraTotal(){
      var sumaTotal=0;
     for (var i = 0; i < arguments.length; i++) {
+        if(arguments[i]==undefined){
+            arguments[i]=999; // esto es una prueba de escritorio personal
+        }
          sumaTotal+=arguments[i];
+        
       }
       console.log(sumaTotal);
  }
 
- suma(1, 10, 10, 10, 10); // 5 numeros, deberia dar 41
- suma(1, 10, 10, 10, 10, 10, 10, 10, 10, 10); // 10 numeros, deberia dar 91
+ sumaMuestraTotal(1, 10, 10, 10, 10); // 5 numeros, deberia dar 41
+ sumaMuestraTotal(1, 10, 10, 10, 10, 10, 10, 10, 10, 10); // 10 numeros, deberia dar 91
+ sumaMuestraTotal(1, 10, 10, 10, 10, 10, 10, 10, 10, undefined, 10); // 10 numeros, deberia dar 91+999=1090
