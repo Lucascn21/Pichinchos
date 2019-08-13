@@ -1,5 +1,7 @@
 saludar(); //Retorna undefined
-suma(2,5); //Funciona, retorna la suma de los numeros, tambien los muestra por consola
+suma(2,5); //Funciona, retorna la suma de los numeros, tambien los muestra por consola  
+total = suma(90,10);
+console.log(total);
 for(let i=0; i<5; i++){
 
     saludar("cacho  "); //Funciona
