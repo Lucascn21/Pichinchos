@@ -23,3 +23,4 @@
  sumaMuestraTotal(1, 10, 10, 10, 10); // 5 numeros, deberia dar 41
  sumaMuestraTotal(1, 10, 10, 10, 10, 10, 10, 10, 10, 10); // 10 numeros, deberia dar 91
  sumaMuestraTotal(1, 10, 10, 10, 10, 10, 10, 10, 10, undefined, 10); // 10 numeros, deberia dar 91+999=1090
+ sumaMuestraTotal(1);
