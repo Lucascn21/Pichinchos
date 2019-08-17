@@ -26,7 +26,9 @@ edad:38
 
   console.log(persona);
 
-
+//Podemos acceder a la propiedad de un objeto utilizando el nombre del objeto, punto y luego el nombre de la propiedad
+console.log(persona.nombre);
+console.log(persona.edad);
 
 
 
