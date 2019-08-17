@@ -30,6 +30,16 @@ edad:38
 console.log(persona.nombre);
 console.log(persona.edad);
 
+//Si intentamos acceder a una propiedad que no existe, nos retornada undefined, surprise surprise
+console.log(persona.dni);
+
+//Para asignar valor a una propiedad lo hacemos de la misma forma que lo hacemos con una variable
+persona.nombre='cacho';
+persona.edad='40';
+
+console.log("\n debajo vemos que cambiaron las propiedades del objeto");
+console.log(persona);
+
 
 
 
