@@ -47,6 +47,11 @@ this.edad++;
 
  //Tambien, dentro de un metodo podemos modificar una propiedad de un objeto
  console.log(persona.edad) //50
- persona.cumpleanios();   //this.edad++
+ persona.cumpleanios();    //this.edad++
  console.log(persona.edad) //51
+
+
+ 
+ 
+
  
