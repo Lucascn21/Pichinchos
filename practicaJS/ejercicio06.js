@@ -4,14 +4,16 @@ var datos = {
     nombre: "kek",
     apellido: "bla",
     edad: 123,
-    vive: true
-
+    vive: true,
+    
+    
+    
+    mostrarNombre : function(){
+        console.log("mi nombre es "+datos.nombre)
+    }
 
 }
-function mostrarNombre() {
 
-    console.log(datos.nombre + " " + datos.apellido)
-}
 
 
 
