@@ -54,25 +54,6 @@ console.log(persona.dni);
  
 
 
- /**
 
-//TO-DO Corregir esto de abajo
-var datos = {
-    nombre: "kek",
-    apellido: "bla",
-    edad: 123,
-    vive: true
-
-
-}
-function mostrarNombre() {
-
-    console.log(nombre + " " + apellido)
-}
-
-
-
-datos.mostrarNombre();
-*/
 
 
