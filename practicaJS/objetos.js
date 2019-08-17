@@ -40,7 +40,18 @@ persona.edad='40';
 console.log("\n debajo vemos que cambiaron las propiedades del objeto");
 console.log(persona);
 
+/**
+ * Las propiedades de un objeto termian siendo variables de las cuales podemos obtener y asignar valores
+ * Un tema importante con los objetos de ECMASCRIPT es que son dinamicos
+ *  Podemos crear propiedades que no fueron definidas en el objeto
+ * Si bien es un gran beneficio de tener esta flexibilidad, nos puede dar un dolor de cabeza si no tenemos cuidado
+ */
 
+ persona.dni=20230230
+ console.log("\n debajo vemos que cambiaron las propiedades del objeto y que ahora tiene dni");
+console.log(persona);
+console.log(persona.dni);
+ 
 
 
  /**
