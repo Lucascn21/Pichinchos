@@ -1,6 +1,4 @@
-
-//TO-DO Corregir esto de abajo
-var datos = {
+    var datos = {
     nombre: "kek",
     apellido: "bla",
     edad: 123,
