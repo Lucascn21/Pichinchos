@@ -6,6 +6,8 @@
 
  const persona={
  nombre: "nico",
+ edad:50,
+
  saludar: function(){
      console.log("Hola, como estan?");
  },
@@ -16,8 +18,11 @@
 
 imponerNombre: function(){
     console.log("El nombre de mi objeto es "+this.nombre);
+},
+cumpleanios:function(){
+this.edad++;
 }
- }
+ };
  /**
   * Como podemos ver, nombre y saludar son dos propiedades iguales
   * Nombre tiene asignado un String
@@ -39,4 +44,9 @@ imponerNombre: function(){
   */
  persona.imponerNombre();
 
+
+ //Tambien, dentro de un metodo podemos modificar una propiedad de un objeto
+ console.log(persona.edad) //50
+ persona.cumpleanios();   //this.edad++
+ console.log(persona.edad) //51
  
