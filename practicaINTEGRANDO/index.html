@@ -1,35 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS en Browser</title>
 </head>
+
 <body>
     <script src="myscripts.js"></script>
 
-        <script>
-                //setTimeout(cambiarColorTitulo("green"),6000); No anda porque el retorno es undefined. Abajo esta la correcta
-                setTimeout(function(){cambiarColorTitulo("blue")},800);
-                cambiarColorTitulo("yellow"); //No anda porque todavia no existe el titulo
-            
-            function cambiarColorTitulo(color){
-            document.getElementById("titulo").style.color=color;
-
-            
-            }
-                </script>
-    
-    <h1 id="titulo">Javascript en browser</h1>
-    <p id="parrafo">Probando JS en el navegador</p> 
-    <img class="imagen" src="C:\repolandia\Pichinchos\practicaINTEGRANDO\img\imagen1.jpg" alt="">
     <script>
+        //setTimeout(cambiarColorTitulo("green"),6000); No anda porque el retorno es undefined. Abajo esta la correcta
+        setTimeout(function () { cambiarColorTitulo("blue") }, 800);
+        cambiarColorTitulo("yellow"); //No anda porque todavia no existe el titulo
+        function cambiarColorTitulo(color) {
+            document.getElementById("titulo").style.color = color;
+        }
+    </script>
+
+    <h1 id="titulo">Javascript en browser</h1>
+    <p id="parrafo">Probando JS en el navegador</p>
+    <img class="imagen" src="C:\repolandia\Pichinchos\practicaINTEGRANDO\img\imagen1.jpg" alt="">
+    
+    <button onclick=""> click aqui</button>
+    
+    
+    
+    
+    
+    
+    <script>
+        //lo de abajo, no usar porque es considerado mala practica en experiencia del usuario
+        window.alert("bla"); // ventana que solo permite aceptar
+        window.confirm("esta seguro?") //ventana de seleccion si/no
+        window.prompt("ingrese un valor", "100")
     //Script inline que cambia el color del titulo a los 5s
     //setTimeout(document.getElementById("titulo").style.color="orange", 5000)
     //document.getElementById("titulo").style.color="orange";
-    </script>   
+    </script>
 
 
 </body>
+
 </html>
