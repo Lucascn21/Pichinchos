@@ -10,15 +10,21 @@
 
 <body>
     <button onclick="agregarTexto()">Agregar texto</button>
+    <div id=contenedor>
 
+
+    </div>
 
 
     <script>
         function agregarTexto() {
             var elementoP = document.createElement("p");
             elementoP.textContent = "blah";
+            var elementoH1 = document.createElement("H1");
+            elementoH1.textContent = "blah";
             document.body.appendChild(elementoP);
 
+            document.getElementById("contenedor").appendChild(elementoH1);
         }
 
 
