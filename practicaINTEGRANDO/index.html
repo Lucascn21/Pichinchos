@@ -17,13 +17,17 @@
 
 
     <script>
-        function agregarTexto() {
-            var elementoP = document.createElement("p");
-            elementoP.textContent = "blah";
-            var elementoH1 = document.createElement("H1");
-            elementoH1.textContent = "blah";
-            document.body.appendChild(elementoP);
 
+        function agregarTexto() {
+            //referencias al elemento creado
+            const elementoP = document.createElement("p");
+            const elementoH1 = document.createElement("H1");
+            //Asignar texto a los nodos de texto de los elementos
+            elementoP.textContent = "blah";
+            elementoH1.textContent = "blah";
+
+            //Inserto el elemento al documento, 1 al body y el 2 dentro de un div
+            document.body.appendChild(elementoP);
             document.getElementById("contenedor").appendChild(elementoH1);
         }
 
