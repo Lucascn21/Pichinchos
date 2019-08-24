@@ -1,0 +1,27 @@
+.boton {
+	background-color: #00007f;
+	color: white;
+	border: none;
+	padding: 0px;
+}
+
+.boton:hover {
+	background-color: lightblue;
+}
+
+.boton:active {
+	background-color: gray;
+	color: blue;
+}
+
+.principal {
+	font-size: 25px;
+}
+
+button {
+	display: block;
+}
+
+.palabra {
+	margin: 5px;
+}

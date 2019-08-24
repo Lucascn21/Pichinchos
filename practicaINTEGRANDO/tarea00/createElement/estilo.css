@@ -1,0 +1,35 @@
+.boton {
+    color: white;
+    background-color: darkblue;
+    border: 0;
+}
+
+.boton:hover {
+    background-color: lightblue;
+}
+
+.boton:active {
+    background-color: gray;
+    color: darkblue;
+}
+
+.principal {
+    font-size: larger;
+}
+
+#contenedor {
+    /*
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    */
+    /*
+    Otra manera, display: grid.
+    */
+    display: grid;
+    grid-auto-columns: 50px;
+}
+
+.palabra {
+    margin: 5px;
+}
