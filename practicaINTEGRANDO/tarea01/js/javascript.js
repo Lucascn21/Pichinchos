@@ -85,7 +85,6 @@ function verPostsAutor(idAutor) {
 
     divContenedorListaPosts.innerHTML = "";
     listaPostsAutor = consultarListaPostsAutor(idAutor);
-
     for (let i = 0; i < listaPostsAutor.length; i++) {
         let div = document.createElement("div");
 
@@ -102,6 +101,7 @@ function verPostsAutor(idAutor) {
 
 
     }
+
 }
 
 
