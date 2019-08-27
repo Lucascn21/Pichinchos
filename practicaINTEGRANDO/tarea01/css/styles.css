@@ -1,0 +1,18 @@
+.boton-autor {
+	padding: 8px;
+	border: 1px solid darkgray;
+	background-color: lightgray;
+	margin: 2px;
+	width: 120px;
+	height: 120px;
+	font-family: sans-serif;
+	font-size: 18px;
+}
+
+.post {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid blue;
+	font-family: sans-serif;
+	font-size: 12px;
+}
