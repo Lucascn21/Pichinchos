@@ -1,0 +1,18 @@
+#divContenedor {
+    width: 80%;
+    border: 0.7rem solid green;
+    padding: 1.1rem;
+    margin: 0;
+    border-radius: 25px;
+    column-count: 3;
+    resize: horizontal;
+    overflow: auto;
+}
+
+.columnas {
+    width: 33%;
+    border: 0.3rem solid orange;
+    padding: 1.1rem;
+    margin: 0;
+    border-radius: 25px;
+}
