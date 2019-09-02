@@ -1,0 +1,63 @@
+.discos {
+    background: gray;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5em;
+}
+
+
+/* Escondo el dummy que uso para armar el html con js
+funciona basicamente como un auxiliar a la hora de usar el esqueleto del html, agregarle los valores del array, clonarlo y pasar al siguiente objeto del array
+*/
+
+div#discoDummy {
+    display: none;
+}
+
+.tapaDisco {
+    width: 150px;
+    height: 175px;
+    border-radius: 20px;
+    border: solid darkorange;
+}
+
+.datosDisco {
+    font-family: monospace;
+    background: darkolivegreen;
+    width: auto;
+    height: auto;
+    border: solid darkgreen;
+    align-self: center;
+    min-width: 20rem;
+}
+
+p {
+    border: 1px solid black;
+}
+
+#divAlFrente {
+    background: gray;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5em;
+    z-index: 5;
+    position: absolute;
+    top: 25px;
+    left: 180px;
+    text-align: center;
+}
+
+#imagenAlFrente {
+    width: 40rem;
+    height: 40rem;
+    border-radius: 20px;
+    border: solid darkorange;
+}
+
+#añoLanzamiento,
+img,
+#tapaDisco {
+    cursor: pointer;
+}

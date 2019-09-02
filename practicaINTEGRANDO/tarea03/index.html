@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Discos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="divAlFrente">
+        <img id=imagenAlFrente hidden="true" onClick="document.getElementById('imagenAlFrente').hidden=true" src="" alt="Imagen Invasiva">
+    </div>
+    <div id="discoDummy" class="discos">
+        <img id="tapa" onClick="abrirFoto(event)" class="tapaDisco" src="" alt="Tapa Del Disco" />
+        <div id="datosDeDiscos" class="datosDisco">
+            <p id="nombreArtista"></p>
+            <p id="tituloDisco"></p>
+            <p id="añoLanzamiento" onclick="enviarAWiki(event)"></p>
+            <!---  https://stackoverflow.com/a/40043918 
+                https://stackoverflow.com/questions/37887219/how-to-get-the-text-html-value-from-event-target-using-jquery--->
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
