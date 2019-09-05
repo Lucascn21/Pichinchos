@@ -1,3 +1,5 @@
 [submodule "demo"]
 	path = demo
 	url = https://github.com/Lucascn21/demo.git
+
+node_modules

@@ -1,0 +1,1 @@
+var texto = "bla! soy el script2.js";
