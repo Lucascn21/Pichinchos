@@ -26,7 +26,16 @@ xhr.onload = function() {
     console.log(datos)
     console.dir(datos)
     datos.forEach(element => {
-        alert(`dato1: ${element.d} dato2: ${element.e}  dato3: ${element.t}`);
+        //alert(`dato1: ${element.d} dato2: ${element.e}  dato3: ${element.t}`);
+		var p1 = document.createElement("p");
+		var p2 = document.createElement("p");
+		var p3 = document.createElement("p");
+p1.textContent=`${element.d}`     
+p2.textContent=`${element.e}`  
+p3.textContent=`${element.t}`                  
+document.body.appendChild(p1);     
+document.body.appendChild(p2);  
+document.body.appendChild(p3);    
     });
 }
 
