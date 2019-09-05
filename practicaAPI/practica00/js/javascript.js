@@ -13,24 +13,22 @@ In the above example, we use open() to initialize the request, and send() to sen
 
 //Creamos la variable xhr y asignamos un nuevo request
 var xhr = new XMLHttpRequest()
-const jwtoken = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTkwNzYzMjEsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJsdWNhc2NuMjFAZ21haWwuY29tIn0.HGXPOxIEixuw8MJrnpbH3AvZdH9cgzs5Oa6nS - Jv - FbRx9AETI9Zjf6sUmIHBPzsah3Z5KCuy4qDSEqNBUo7Mg'
 
-console.log(xhr);
-console.dir(xhr);
-
+const token = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTkxODMyODIsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJlbGlhbmFzaWx2YS5wcm9mZXNpb25hbEBnbWFpbC5jb20ifQ.wanoXw95QI2jZOqY5Ims4vtYZTekXkVuIx0SADyC7mKTia7VlkkxdhVsESMOnfJsew5O2lg5t96flv4KA1-riw";
 // Open a new connection, using the GET request on the URL endpoint
 xhr.open('GET', 'https://api.estadisticasbcra.com/milestones', true)
-xhr.setRequestHeader('Authorization', `Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTkwNzYzMjEsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJsdWNhc2NuMjFAZ21haWwuY29tIn0.HGXPOxIEixuw8MJrnpbH3AvZdH9cgzs5Oa6nS - Jv - FbRx9AETI9Zjf6sUmIHBPzsah3Z5KCuy4qDSEqNBUo7Mg`);
+xhr.setRequestHeader("Authorization", "BEARER " + token);
+
 xhr.onload = function() {
     // Begin accessing JSON data here
     console.log(xhr.responseText)
     let datos = JSON.parse(xhr.responseText)
     console.log(datos)
     console.dir(datos)
+    datos.forEach(element => {
+        alert(`dato1: ${element.d} dato2: ${element.e}  dato3: ${element.t}`);
+    });
 }
 
 // Send request
-xhr.send()
-
-console.log(xhr);
-console.dir(xhr);
+xhr.send();
