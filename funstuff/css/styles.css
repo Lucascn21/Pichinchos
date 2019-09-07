@@ -1,12 +1,8 @@
 #divContenedor {
-    width: 80%;
-    border: 0.7rem solid green;
-    padding: 1.1rem;
-    margin: 0;
-    border-radius: 25px;
-    column-count: 3;
-    resize: horizontal;
-    overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .columnas {
