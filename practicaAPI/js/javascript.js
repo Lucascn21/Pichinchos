@@ -11,24 +11,15 @@ XMLHttpRequest includes a number of methods and attributes.
 In the above example, we use open() to initialize the request, and send() to send the request
 */
 
-//Creamos la variable xhr y asignamos un nuevo request
-var xhr = new XMLHttpRequest()
-console.log(xhr);
-console.dir(xhr);
+//Creamos la variable request y asignamos un nuevo request
+var request = new XMLHttpRequest()
 
 // Open a new connection, using the GET request on the URL endpoint
-xhr.open('GET', 'https://my-json-server.typicode.com/lucascn21/demo/db', true)
+request.open('GET', 'https://my-json-server.typicode.com/Lucascn21/demo', true)
 
-xhr.onload = function() {
+request.onload = function() {
     // Begin accessing JSON data here
-    console.log(xhr.responseText)
-    let datos = JSON.parse(xhr.responseText)
-    console.log(datos)
-    console.dir(datos)
 }
 
 // Send request
-xhr.send()
-
-console.log(xhr);
-console.dir(xhr);
+request.send()
