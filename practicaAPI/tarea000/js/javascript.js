@@ -54,9 +54,10 @@ function verPostsAutor(idAutor) {
 
     // Vacío el contenido del div de posts
     divContenedorListaPosts.innerHTML = "";
-
+    // alert("bla")
     // Consulto la lista de posts del autor indicado
     consultarListaPostsAutor(idAutor, listaPostsAutor => {
+        // console.dir(listaPostsAutor)
 
         // Esta función es el callback de la consulta AJAX de posts del autor.
         // Recorro la lista recibida y para cada elemento armo un div con su título
@@ -75,6 +76,7 @@ function verPostsAutor(idAutor) {
             // Agrego el div al otro div contenedor
             divContenedorListaPosts.appendChild(div);
         });
+
     });
 
 
@@ -101,7 +103,7 @@ function consultarListaPostsAutor(idAutor, cbOk) {
         datos.forEach(elemento => {
             arrayFiltrado = datos.filter(elemento => elemento.idAutor == idAutor);
         })
-        cbOk = arrayFiltrado;
+        cbOk(arrayFiltrado);
         //console.dir(arrayFiltrado);
     }
 
