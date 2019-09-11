@@ -100,9 +100,8 @@ function consultarListaPostsAutor(idAutor, cbOk) {
     request.open('GET', 'https://my-json-server.typicode.com/rsegretin/json-data-pubs/publicaciones', true);
     request.onload = function() {
         var datos = JSON.parse(request.response)
-        datos.forEach(elemento => {
-            arrayFiltrado = datos.filter(elemento => elemento.idAutor == idAutor);
-        })
+        arrayFiltrado = datos.filter(elemento => elemento.idAutor == idAutor);
+
         cbOk(arrayFiltrado);
         //console.dir(arrayFiltrado);
     }
