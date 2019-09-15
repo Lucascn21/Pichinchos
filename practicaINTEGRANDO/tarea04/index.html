@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Discos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Contenedor para los discos -->
+    <div id="discos"></div>
+
+    <!-- div con imagen y botón de cierre para el zoom -->
+    <div id="zoomTapa" class="oculto">
+        <img src="" alt="Vista completa de tapa">
+        <button id="cerrar" onclick="cerrarZoom()">X</button>
+    </div>
+
+    <!-- div para hacer un sombreado que "inhabilite" el fondo cuando muestro ventana tipo modal -->
+    <div id="sombreado" class="oculto"></div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
