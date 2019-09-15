@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Primer proyecto con servidor en Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "ComIT",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

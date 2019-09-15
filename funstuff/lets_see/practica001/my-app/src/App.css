@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    min-height: 100vh;
+    background: lightblue;
+    display: flex;
+}
+
+.tweet {
+    border-radius: 30px;
+    width: 300px;
+    height: 300px;
+    background: rgb(250, 249, 249);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.col {
+    background-color: red
+}
+
+.col-3 {
+    background-color: inherit
+}
+
+#navbar {
+    background-color: rgb(32, 32, 32);
+}
+
+#container {
+    background-color: gray;
+}
