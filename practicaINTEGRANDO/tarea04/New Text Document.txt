@@ -1,0 +1,4 @@
+Lo que les propongo como ejercicio: creen su propio servidor Express con 2 puntos de acceso:
+GET "/" que retorne la página index.html
+GET "/discos" que retorne este JSON que mencioné.
+También, claro, modifiquen el script.js de la página para que en lugar de consultar a my-json-server.typicode.com consulte a su api localhost:XXXX/discos
