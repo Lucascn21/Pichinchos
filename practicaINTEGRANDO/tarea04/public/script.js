@@ -8,7 +8,7 @@ const divSombreado = document.getElementById("sombreado");
 let xhr = new XMLHttpRequest();
 
 // Asigno callback de respuesta completa (se llamará cuando se reciba toda la información)
-xhr.onload = function () {
+xhr.onload = function() {
     // Convierto el JSON de la respuesta en objeto y lo guardo en una variable
     let discos = JSON.parse(xhr.responseText);
 
@@ -28,7 +28,7 @@ xhr.onload = function () {
 }
 
 // Abro conexión para request GET a la url de la API que retorna el JSON con discos
-xhr.open("GET", "http://my-json-server.typicode.com/rsegretin/jsondb/discos");
+xhr.open("GET", "http://localhost:3000/discos");
 // Envío el request
 xhr.send();
 

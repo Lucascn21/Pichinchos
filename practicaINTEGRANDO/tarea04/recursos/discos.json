@@ -1,0 +1,38 @@
+[
+  {
+    "artista": "The Beatles",
+    "titulo": "Abbey Road",
+    "lanzamiento": 1968,
+    "tapa": "https://www.udiscovermusic.com/wp-content/uploads/2017/08/Abbey-Road.jpg"
+  },
+  {
+    "artista": "The Rolling Stones",
+    "titulo": "Flashpoint",
+    "lanzamiento": 1991,
+    "tapa": "https://stonesplanetbrazil.com/wp-content/uploads/2017/01/flash.jpg"
+  },
+  {
+    "artista": "Collective Soul",
+    "titulo": "Live",
+    "lanzamiento": 2017,
+    "tapa": "https://direct.rhapsody.com/imageserver/images/alb.281495204/500x500.jpg"
+  },
+  {
+    "artista": "Pearl Jam",
+    "titulo": "Ten",
+    "lanzamiento": 1991,
+    "tapa": "https://img.cdandlp.com/2017/10/imgL/118972369.jpg"
+  },
+  {
+    "artista": "Queen",
+    "titulo": "A Night at the Opera",
+    "lanzamiento": 1975,
+    "tapa": "https://www.elquintobeatle.com/wp-content/uploads/2015/12/queen-a-night-at-the-opera-1.jpg"
+  },
+  {
+    "artista": "Arcade Fire",
+    "titulo": "Everything Now",
+    "lanzamiento": 2017,
+    "tapa": "http://images.coveralia.com/audio/a/Arcade_Fire-Everything_Now-Frontal.jpg"
+  }
+]
