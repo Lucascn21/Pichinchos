@@ -11,7 +11,7 @@ Cosas importantes:
 3. El servidor lo pueden correr en cualquier puerto que les pinte (siempre > 1024, sugiero > 3000)
 4. Recuerden que si hacen cambios en el .js donde levanta Express, tienen que reiniciar el servidor.
 */
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); //cuando te venga un pedido de un archivo estatico, anda a buscarlo a la carpeta public
 
 //GET "/" que retorne la página index.html
 app.get('/', (req, res) => {
@@ -20,7 +20,10 @@ app.get('/', (req, res) => {
 
 });
 app.get('/discos', (req, res) => {
+
+
     res.sendFile(__dirname + '/recursos/discos.json');
+
 })
 
 
