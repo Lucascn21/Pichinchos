@@ -1,16 +1,14 @@
 <h1>Colección de {{listaPaises.length}} paises</h1>
+<h2>El método de petición fue {{tipoMetodo}}</h2>
 
 
+<div class="container d-flex flex-row"></div>
 {{#each listaPaises}}
-<div class="container">
-  <div class="row w-25 p-3 h-25 border border-white bg-dark text-white ">
-    <div class="col-sm  ">
-      <p>Nombre: {{this.name}}</p>
-    </div>
-    <div class="col-sm">
-       <p>Codigo: {{this.code}}</p>
-    </div>
+ 
+<div class="col w-25 p-0 h-25 border border-white bg-dark text-white  ">
+  <div class="row-sm border border-success">
+    <p>Nombre: {{this.name}} || Codigo: {{this.code}}</p> 
   </div>
 </div>
 {{/each}}
-
+</div>
