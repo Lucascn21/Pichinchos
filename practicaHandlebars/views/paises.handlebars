@@ -1,0 +1,16 @@
+<h1>Colección de {{listaPaises.length}} paises</h1>
+
+
+{{#each listaPaises}}
+<div class="container">
+  <div class="row w-25 p-3 h-25 border border-white bg-dark text-white ">
+    <div class="col-sm  ">
+      <p>Nombre: {{this.name}}</p>
+    </div>
+    <div class="col-sm">
+       <p>Codigo: {{this.code}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}
+

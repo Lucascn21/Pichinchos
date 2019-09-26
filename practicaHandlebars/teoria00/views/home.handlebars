@@ -1,0 +1,36 @@
+<h2>Consulta de discos</h2>
+
+<div class="filtros">
+    <div class="filtro">
+        <label for="num1">Lanzamiento</label>
+        <input type="text" name="lanzamiento" id="lanzamiento">
+    </div>
+
+    <div class="filtro">
+        <label for="artista">Artista</label>
+        <input type="text" name="artista" id="artista">
+    </div>
+
+    <button id="buscar" onclick="buscar()">Consultar</button>
+</div>
+
+<script>
+
+    function buscar() {
+
+        let url = "/discos?"
+
+        let lanzamiento = document.getElementById("lanzamiento").value;
+        if (lanzamiento) {
+            url += "lanzamiento=" + lanzamiento;
+        }
+
+        let artista = document.getElementById("artista").value;
+        if (artista) {
+            url += "artista=" + artista;
+        }
+
+        location = url;
+    }
+
+</script>
