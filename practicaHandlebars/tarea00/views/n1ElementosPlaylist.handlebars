@@ -1,0 +1,17 @@
+<h1>Playlist de {{ listaElementosPlaylist.length}} cancion/es</h1>
+{{#each listaElementosPlaylist}}
+<div class="d-flex">
+    <div class="elementoPlaylist media w-50 p-3 flex-wrap ">
+        <div class="media-body">
+            <p>Artista: {{this.artist}}</p>
+            <p>Cancion: {{this.song}}</p>
+        </div>
+        <!-- Hice LazyLoad asi no tarda tanto en cargar el view, probe load="lazy", igual fue lento en mi pc https://css-tricks.com/lazy-load-embedded-youtube-videos/ -->
+        <iframe allowFullScreen="allowFullScreen"
+            src="https://www.youtube.com/embed/{{this.videoId}}?ecver=1&amp;iv_load_policy=3&amp;rel=0&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560"
+            srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/{{this.videoId}}?autoplay=1><img src=https://img.youtube.com/vi/{{this.videoId}}/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>"
+            width="560" height="315"  allowtransparency="true" frameborder="0" class="d-flex mr-3">
+        </iframe>
+    </div>
+</div>
+{{/each}}

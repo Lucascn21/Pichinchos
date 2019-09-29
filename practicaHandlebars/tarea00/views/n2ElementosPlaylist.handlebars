@@ -1,0 +1,13 @@
+<h1>Playlist de {{ listaElementosPlaylist.length}} cancion/es</h1>
+{{#each listaElementosPlaylist}}
+<div class="d-flex">
+    <div class="elementoPlaylist media w-50 p-3 flex-wrap ">
+        <div class="media-body">
+            <a href="nivel2iframe?videoId={{this.videoId}}"class="text-wrap text-light">
+            <p>Artista: {{this.artist}}</p>
+            <p>Cancion: {{this.song}}</p>
+            </a>
+        </div>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,39 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 0px;
+}
+
+body {
+    background-color: solid black;
+    border-bottom: solid rgb(48, 47, 47);
+    border-top: solid rgb(48, 47, 47);
+}
+
+.elementoPlaylist {
+    border: solid rgb(2, 61, 2);
+    background-color: grey;
+}
+
+iframe {
+    border: solid rgb(65, 12, 78);
+}
+
+nav {
+    border-radius: 1rem;
+    box-shadow: 0 42px 22px -22px rgba(0, 0, 0, .2);
+}
+
+a {
+    background-color: red;
+}
+
+.nav a p {
+    display: none;
+}
+
+.nav a:hover p {
+    display: block;
+    color: yellowgreen;
+}

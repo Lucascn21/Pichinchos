@@ -1,0 +1,102 @@
+<h2>Consulta de paises</h2>
+<hr>
+
+
+
+<!-- FORMULARIO CON POST-->
+<h3>Form, por post</h3>
+<br>
+<form action="/paises" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre">
+
+    <label for="codigo">Codigo</label>
+    <input type="text" name="codigo" id="codigo">
+
+    <input type="submit" name="" id="">
+</form>
+<br><hr>
+
+
+
+<!-- FORMULARIO CON GET-->
+<h3>Form, por get</h3>
+<form action="/paises" method="get">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre">
+
+    <label for="codigo">Codigo</label>
+    <input type="text" name="codigo" id="codigo">
+
+    <input type="submit" name="" id="">
+</form>
+<br><hr>
+
+
+
+<!-- No es formulario, CON GET
+LOS INPUTS TUVE QUE CAMBIARLES DE NOMBRE PARA QUE ME TOME LOS VALORES QUE CORRESPONDEN A LOS CAMPOS DE LOS FITROS Y NO LOS INPUTS DE LOS FORMS-->
+<h3>Sin form, por get</h3>
+
+<div class="filtros">
+    <div class="filtro">
+        <label for="nombre2">Nombre</label>
+        <input type="text" name="nombre2" id="nombre2">
+    </div>
+
+    <div class="filtro">
+        <label for="codigo2">Codigo</label>
+        <input type="text" name="codigo2" id="codigo2">
+    </div>
+
+    <button id="buscar" onclick="buscar()">Consultar</button>
+</div>
+
+<br><br><br>
+  <footer><table class="table table-sm w-25 p-3 h-25 d-inline-block">
+  <thead>
+    <tr>
+      <th>Ejemplos para probar</th>
+      <th>Nombre</th>
+      <th>Codigo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Armenia</td>
+      <td>AM</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Paraguay</td>
+      <td>PY</td>
+    </tr>
+   <tr>
+      <th scope="row">3</th>
+      <td>Latvia</td>
+      <td>LV</td>
+    </tr>
+      <tr>
+      <th scope="row">4</th>
+      <td>Burkina Faso</td>
+      <td>BF</td>
+    </tr>
+  </tbody>
+</table></footer>
+
+<script>
+    function buscar() {
+        let url = "/paises?"
+        let nombre = document.getElementById("nombre2").value;
+        if (nombre) {
+            url += `nombre=${nombre}`;
+        }
+
+        let codigo = document.getElementById("codigo2").value;
+        if (codigo && nombre) url += `&codigo=${codigo}`;
+        else if (codigo) url += `codigo=${codigo}`;
+        location = url;
+    }
+</script>
+<!-- HASTA ACA-->
