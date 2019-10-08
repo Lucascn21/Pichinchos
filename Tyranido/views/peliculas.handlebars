@@ -1,65 +1,76 @@
 <nav>
+    {{#if anios}}
     <div class="container justify-content-center ">
         <div class="row no-gutters">
             <div class="col-xs-2 p-2">
                 <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                        <option selected>Genero</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-xs-2 p-2">
-                <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                        <option selected>Fecha de Lanzamiento</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="anio" form="formulario2">
+                        {{#each anios as |anios|}}
+                        <option id="anio" value="{{anios}}"> {{anios}}</option>
+                        {{/each}}
                     </select>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Filtrar</button>
+                        <input class="btn btn-outline-secondary" formmethod="GET" form="formulario2"
+                            type="submit">Filtrar</button>
                     </div>
                 </div>
             </div>
 
         </div>
-
     </div>
 
+
+
+    <form action="/bla" id="formulario2"></form>
+
+
+    {{/if}}
+
+    <form action="/bla" id="formulario2" method="get"></form>
+
+
+    {{#if listaPeliculas}}
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-6 mx-auto">
+                <div class="alert alert-dark" role="alert">
+                    Cantidad de resultados: {{resultados}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
 </nav>
 </div>
 
 
 
 <div class="container w-50 pt-3 bg-dark">
-{{#grouped_each 3 listaPeliculas}}
+    {{#grouped_each 3 listaPeliculas}}
 
-<div class="row no-gutters justify-content-around ">
-    <div class="card-deck">
-        {{#each this }}
-        <div class="card mb-4 carta " style="min-width: 18rem; max-width: 18rem;">
-            <div class="embed-responsive embed-responsive-1by1">
-                <img class="card-img-top embed-responsive-item" src="{{this.Poster}}" alt="Card image cap">
+    <div class="row no-gutters justify-content-around ">
+        <div class="card-deck">
+            {{#each this }}
+            <div class="card mb-4 carta " style="min-width: 18rem; max-width: 18rem;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img class="card-img-top embed-responsive-item" src="{{this.Poster}}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{this.Title}}</h5>
+                    <p class="card-text">{{this.Year}}</p>
+                    <p class="card-text"><small class="text-muted"><span class="imdbRatingPlugin" data-user=""
+                                data-title="{{this.imdbID}}" data-style="p2"><a
+                                    href="https://www.imdb.com/title/{{this.imdbID}}/?ref_=plg_rt_1"><img
+                                        src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/images/imdb_38x18.png"
+                                        alt="{{this.Title}}" />
+                                </a></span></small></p>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">{{this.Title}}</h5>
-                <p class="card-text">{{this.Year}}</p>
-                <p class="card-text"><small class="text-muted"><span class="imdbRatingPlugin" data-user=""
-                            data-title="{{this.imdbID}}" data-style="p2"><a
-                                href="https://www.imdb.com/title/{{this.imdbID}}/?ref_=plg_rt_1"><img
-                                    src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/images/imdb_38x18.png"
-                                    alt="{{this.Title}}" />
-                            </a></span></small></p>
-            </div>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
-</div>
 
-{{/grouped_each}}
+    {{/grouped_each}}
 
 </div>
 

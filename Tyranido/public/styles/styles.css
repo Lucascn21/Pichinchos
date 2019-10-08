@@ -1,7 +1,7 @@
     * {
         box-sizing: border-box;
         float: none;
-        font-family: 'MyWebFont', Fallback, sans-serif;
+        font-family: 'Roboto Mono', monospace;
         font-size: .9rem;
     }
     
@@ -18,10 +18,7 @@
     }
     
     @font-face {
-        font-family: 'MyWebFont';
-        src: url('/resources/grammara.ttf') format('truetype'), url('/resources/Microgramma_D_Extended_Bold.otf') format('otf');
-        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-        /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+        font-family: 'Oswald', sans-serif;
     }
     
     .boton {

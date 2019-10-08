@@ -45,7 +45,8 @@ app.get("/", (req, res) => {
 
 
 app.get('/bla', function(req, res) {
-    let data;
+    let data, resultados, anios = [],
+        pedidos = [];
     //http://www.omdbapi.com/?i=tt3896198&apikey=40921d99
     axios
         .get('https://www.omdbapi.com/', {
@@ -54,28 +55,65 @@ app.get('/bla', function(req, res) {
                 //t: 'of', //retorna el primer titulo que contiene esta string (REQUERIDO ESTE O i PARA BUSQUEDAS ESPECIFICAS)
                 //s: 'of the', //devuelve array de objetos, tambien una propiedad llamada totalResults. Con 'of' devolvia un error: demasiados resultados. (BUSQUEDAS GENERALES)
                 //type:'movie' // movie, series, episode ESPECIFICA SI BUSCAMOS UNA SERIE, PELI O EPISODIO ESPECIFICO
-                //y:1992 //Año de estreno/release de la serie, pelicula o episodio.
+                //y:1992 //anio de estreno/release de la serie, pelicula o episodio.
                 //page: 1 //Numero de pagina
                 i: req.query.imdb,
                 t: req.query.titulo,
                 s: req.query.busqueda,
                 type: req.query.tipo,
-                y: req.query.año,
+                y: req.query.anio,
                 page: req.query.pagina,
                 apikey: '40921d99'
             }
         })
         .then(function(response) {
 
+            //  pedidos.push(req._parsedOriginalUrl.query);
+            pedidos.push(req.query);
+            console.dir(req.query)
+            console.dir(req._parsedOriginalUrl.query)
+                //console.dir(req.originalUrl.query)
+            console.dir(pedidos)
+                //  console.log(Object.getOwnPropertyNames(req))
+                // console.log(Object.keys(req));
+                // pedido = req;
+                //console.dir(req._parsedUrl);
+                //console.dir(pedido.query) // /bla
+                //console.dir(pedido.path) // /bla
+                //console.dir(pedido.href)
+                //  console.log(Object.keys(req));
+                //!urlPrevia ? urlPrevia = req._parsedUrl._raw : urlPrevia += req._parsedUrl._raw;
+                // urlPrevia = req._parsedUrl._raw;
+                // console.log(req.baseUrl)
+                //console.log(req.url)
+
+            //console.dir(pedido._raw);
+            // console.dir(pedido.query);
+            // console.dir(pedido.search);
+            //console.dir(pedido.busqueda);
+            // console.dir(Object.getOwnPropertyNames(pedido))
+            // console.log(Object.keys(pedido));
+            //  console.dir(pedido)
+
             //console.dir(response);
             // console.log(response.data.Search[1]); //Array cuando recibo muchos elementos
             //Si recibo respuesta, continuo, sino rechazo la promesa 
-            if (response.data.Response == 'True')
-            //Si recibo array de resultados, lo guardo, sino guardo la data del elemento
+            if (response.data.Response == 'True') {
+                //Si recibo array de resultados, lo guardo, sino guardo la data del elemento
                 data = response.data.Search ? response.data.Search : response.data;
+                resultados = response.data.totalResults;
 
-            else throw new Error(response.data.Error);
-            console.dir(response.data);
+                response.data.Search.forEach(element => { anios.push(element.Year) });
+                anios = Object.values(anios);
+                // console.dir(anios);
+            } else {
+                //console.dir(response);
+                throw new Error(response.data.Error);
+
+            }
+
+
+            //   console.dir(response.data);
 
         })
         .catch(function(error) {
@@ -99,18 +137,19 @@ app.get('/bla', function(req, res) {
                 msjError = error.message;
             }
             //res.send(JSON.stringify(msjError));
-            res.render('peliculas'); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
+            res.render('home', { error: msjError }); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
         })
         .finally(function() {
             console.log("finally, data enviada");
             // console.dir(data);
             // if (data) res.send(JSON.stringify(data)); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
-
-            if (data) res.render('peliculas', { listaPeliculas: data }); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
+            //   console.dir(data[0])
+            console.log(typeof data)
+            console.log(typeof anios);
+            //  console.dir("aca ta " + urlPrevia);
+            if (data) res.render('peliculas', { listaPeliculas: data, resultados: resultados, anios: anios, pedidos: pedidos }); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
 
 
         });
 });
 app.listen(puerto, () => console.log(`Estoy en https://localhost:${puerto}/`))
-
-Handlebars = require("Handlebars");
