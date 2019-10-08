@@ -37,3 +37,9 @@ a {
     display: block;
     color: yellowgreen;
 }
+
+.divsalvaje {
+    position: absolute;
+    z-index: 10;
+    padding-left: 40rem;
+}
