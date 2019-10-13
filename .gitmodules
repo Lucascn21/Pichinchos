@@ -1,3 +1,6 @@
 [submodule "demo"]
 	path = demo
 	url = https://github.com/Lucascn21/demo.git
+[submodule "TyranidoLives"]
+	path = TyranidoLives
+	url = https://github.com/Lucascn21/Tyranido.git
