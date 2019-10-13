@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/d339e9753d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
@@ -21,12 +22,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Mono&display=swap" rel="stylesheet">
     <title>Tyranido</title>
 </head>
 
 <body>
-    <form action="/bla" id="formulario" method="get"></form>
+    <form action="/bla" id="formulario" method="POST"></form>
     <div class="container-fluid p-0">
         <header>
             <div class="container justify-content-center ">
@@ -39,7 +40,7 @@
                                 placeholder="Buscar Pelicula por titulo" aria-label="" aria-describedby="basic-addon1"
                                 name="busqueda" type="submit" form="formulario">
                             <div class="input-group-append bg-dark"><button class="btn btn-dark btn-sm boton"
-                                    formmethod="GET" form="formulario" type="submit"><i
+                                    formmethod="POST" form="formulario" type="submit"><i
                                         class="material-icons md-18">search</i></button></div>
                         </div>
                     </div>
@@ -47,8 +48,7 @@
                 </div>
             </div>
         </header>
-    </div>  
-
+    </div>
     {{{body}}}
 
 

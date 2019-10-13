@@ -1,72 +1,84 @@
+<!-- Page Content -->
+<div class="container carta">
 
-        <nav>
-            <div class="container justify-content-center ">
-                <div class="row no-gutters">
-                    <div class="col-xs-2 p-2">
-                        <div class="input-group">
-                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                      <option selected>Genero</option>
-                                      <option value="1">One</option>
-                                      <option value="2">Two</option>
-                                      <option value="3">Three</option>
-                                    </select>
-                        </div>
-                    </div>
-                    <div class="col-xs-2 p-2">
-                        <div class="input-group">
-                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                          <option selected>Fecha de Lanzamiento</option>
-                                          <option value="1">One</option>
-                                          <option value="2">Two</option>
-                                          <option value="3">Three</option>
-                                        </select>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Filtrar</button>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4 carta">{{pelicula.Title}}
+    <small class="font-italic text-muted lead">{{pelicula.Year}}</small>
+  </h1>
 
-                </div>
+  <!-- Portfolio Item Row -->
+  <div class="row ">
 
-            </div>
-
-
-
-
-        </nav>
+    <div class="col-md-3">
+      <img class="img-fluid border border-dark" src="{{pelicula.Poster}}" alt="">
     </div>
 
+    <div class="col-md-9">
+      <h3 class="my-3">Plot</h3>
+      <p class="ml-4">"{{pelicula.Plot}}" </p>
+      <hr>
+      <h3 class="my-3 text-capitalize">{{pelicula.Type}} Details</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fas fa-angle-right"></i>Rated: {{pelicula.Rated}}.</li>
+        <li><i class="fa-li fas fa-angle-right"></i>Released: {{pelicula.Released}}.</li>
+        <li><i class="fa-li fas fa-angle-right"></i>Runtime: {{pelicula.Runtime}}.</li>
+        <li><i class="fa-li fas fa-angle-right"></i>Genre/s: {{pelicula.Genre}}.</li>
+        {{#if pelicula.Director}}
+        <li><i class="fa-li fas fa-angle-right"></i>Production: {{pelicula.Director}}.</li>
+        {{/if}}
+        <li><i class="fa-li fas fa-angle-right"></i>Writer/s: {{pelicula.Writer}}.</li>
+        <li><i class="fa-li fas fa-angle-right"></i>Actor/s: {{pelicula.Actors}}.</li>
+        <li><i class="fa-li fas fa-angle-right"></i>Language: {{pelicula.Language}}.</li>
+        <li><i class="fa-li fas fa-angle-right"></i>Country: {{pelicula.Country}}.</li>
+        {{#if pelicula.Production}}
+        <li><i class="fa-li fas fa-angle-right"></i>Production: {{pelicula.Production}}.</li>
+        {{/if}}
+        {{#if pelicula.totalSeasons}}
+        <li><i class="fa-li fas fa-angle-right"></i>Seasons: {{pelicula.totalSeasons}}.</li>
+        {{/if}}
+
+        {{#if pelicula.BoxOffice}}
+        <li><i class="fa-li fas fa-dollar-sign text-capitalize"></i>Box Office: {{pelicula.BoxOffice}}</li>
+        {{/if}}
+        {{#if pelicula.Website}}
+        <li><i class="fa-li fas fa-at"></i>Website: <a href="{{pelicula.Website}}"
+            class="font-weight-bold ">{{pelicula.Title}}</a></li>
+        {{/if}}
+
+      </ul>
+      <hr>
+
+      <h3 class="my-3">Ratings & Awards</h3>
+
+      <ul class="fa-ul">
+        {{#each pelicula.Ratings}}
+        <li><i class="fa-li far fa-star"></i>{{this.Source}}</li>
+        <div class="progress w-50 border border-warning bg-danger  ">
+          <div class="progress-bar progress-bar-striped bg-success coloreame" role="progressbar"
+            style="width: {{this.Value}}%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">%{{this.Value}}
+          </div>
+        </div>
+        {{/each}}
+      </ul>
+      <div class="row">
+        <div class="col">
+          <ul class="fa-ul">
+            {{#if pelicula.Awards}}
+            <li><i class="fa-li fas fa-award"></i>
+              <p class=" text-capitalize">Awards: {{pelicula.Awards}}</p>
+            </li>
+            {{/if}}
 
 
- 
-    {{listaPeliculas.length}}
+
+          </ul>
 
 
+        </div>
+      </div>
+  
 
-    <div class="container">
-        <main class="bg-dark">
-            {{#each listaPeliculas}}
-            <div class="row no-gutters">
-                <div class="col-md">
-                    <div class="card carta" style="width: 18rem;">
-                        <img src="{{this.Poster}}" class="shadow-lg card-img-top" alt="Imagen de la peli">
-                        <div class="card-body carta">
-                            <p class="card-title">{{this.Title}}</p>
-                            <p class="card-text">{{this.Plot}}</p>
-                        </div>
-                        <ul class="list-group list-group-flush carta">
-                            <li class="list-group-item">{{this.Year}}</li>
-                            <li class="list-group-item">{{this.Genre}}</li>
-                            <li class="list-group-item">{{this.Released}}</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="{{this.Website}}" class="card-link">Website</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </main>
+
     </div>
 
-    
+  </div>

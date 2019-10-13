@@ -23,13 +23,13 @@
 
 
 <div class="container w-50 pt-3 bg-dark">
-    <ul class="nav justify-content-center">
-        <form action="/bla" id="filtrar" method="post" class="border border-secondary     border-left-0 ">
+    <div class="alert alert-dark border-0 no-gutters m-n" role="alert">
+        <form action="/bla" id="filtrar" method="post" class="form-inline w-50">
             <input type="submit" form="filtrar" formmethod="post"
-                class="text-warning font-weight-bold alert-warning bg-dark" data-toggle="tooltip" data-placement="right"
-                title="Pick a year and filter 10 results." value="Filter">
+                class="text-warning font-weight-bold alert-warning" data-toggle="tooltip" data-placement="right"
+                title="Lookup detailed info of this {{this.Type}}!" value="Filter">
 
-            <select class="text-warning font-weight-bold alert-warning bg-dark border-dark" name="anio">
+            <select class="text-warning font-weight-bold" name="anio">
                 <option value="" selected>PICK A YEAR</option>
                 {{#each anios}}
                 <option value="{{this}}">{{this}}</option>
@@ -37,8 +37,7 @@
             </select>
             <input type="hidden" name="busqueda" value="{{pedido}}">
         </form>
-    </ul>
-    <hr>
+    </div>
     {{#grouped_each 3 listaPeliculas}}
 
     <div class="row no-gutters justify-content-around ">
@@ -46,15 +45,12 @@
             {{#each this }}
             <div class="card mb-4 carta position-relative" style="min-width: 18rem; max-width: 18rem;">
 
-                {{#if this.Type}}
+
                 <input type="submit" form="form{{this.imdbID}}{{this.Title}}" formmethod="post"
                     class="text-warning font-weight-bold alert-warning bg-dark" data-toggle="tooltip"
-                    data-placement="right" title="Lookup detailed info of this {{this.Type}}!" value="More Info">
-                {{else}}
-                <p class="text-warning font-weight-bold alert-error bg-danger    text-align-center">Games do not have
-                    more
-                    info</p>
-                {{/if}}
+                    data-placement="right" title="Lookup detailed info of this {{this.Type}}!" value="Consultar">
+
+
                 <div class="embed-responsive embed-responsive-1by1">
                     <img class="card-img-top embed-responsive-item" src="{{this.Poster}}" alt="No Imagen">
                 </div>
@@ -65,16 +61,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{this.Title}}</h5>
                     <p class="card-text">{{this.Year}}</p>
-
-
-                    {{#if this.Type}}
                     <p class="card-text text-uppercase">{{this.Type}}</p>
-                    {{else}}
-                    <p class="card-text text-uppercase">game</p>
-                    {{/if}}
-
-
-
                     <p class="card-text"><small class="text-muted"><span class="imdbRatingPlugin" data-user=""
                                 data-title="{{this.imdbID}}" data-style="p2"><a
                                     href="https://www.imdb.com/title/{{this.imdbID}}/?ref_=plg_rt_1"><img

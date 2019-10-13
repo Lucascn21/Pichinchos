@@ -40,14 +40,20 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get("/", (req, res) => {
     res.render('home');
-    //res.sendFile(path.join(`${__dirname}/index.html`));
 });
 
 
-app.get('/bla', function(req, res) {
-    let data, resultados, anios = [],
-        pedidos = [];
+var bodyParser = require('body-parser')
+app.use(bodyParser.json()) // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.post('/bla', function(req, res) {
+    let anios
+    let data, resultados,
+        pedido,
+        msjError;
+    // console.dir(req.body);
     //http://www.omdbapi.com/?i=tt3896198&apikey=40921d99
+    // console.dir(req.body);
     axios
         .get('https://www.omdbapi.com/', {
             params: {
@@ -57,73 +63,45 @@ app.get('/bla', function(req, res) {
                 //type:'movie' // movie, series, episode ESPECIFICA SI BUSCAMOS UNA SERIE, PELI O EPISODIO ESPECIFICO
                 //y:1992 //anio de estreno/release de la serie, pelicula o episodio.
                 //page: 1 //Numero de pagina
-                i: req.query.imdb,
-                t: req.query.titulo,
-                s: req.query.busqueda,
-                type: req.query.tipo,
-                y: req.query.anio,
-                page: req.query.pagina,
+                i: req.body.imdb,
+                t: req.body.titulo,
+                s: req.body.busqueda,
+                type: req.body.tipo,
+                y: req.body.anio,
+                page: req.body.pagina,
                 apikey: '40921d99'
             }
         })
         .then(function(response) {
-
-            //  pedidos.push(req._parsedOriginalUrl.query);
-            pedidos.push(req.query);
-            console.dir(req.query)
-            console.dir(req._parsedOriginalUrl.query)
-                //console.dir(req.originalUrl.query)
-            console.dir(pedidos)
-                //  console.log(Object.getOwnPropertyNames(req))
-                // console.log(Object.keys(req));
-                // pedido = req;
-                //console.dir(req._parsedUrl);
-                //console.dir(pedido.query) // /bla
-                //console.dir(pedido.path) // /bla
-                //console.dir(pedido.href)
-                //  console.log(Object.keys(req));
-                //!urlPrevia ? urlPrevia = req._parsedUrl._raw : urlPrevia += req._parsedUrl._raw;
-                // urlPrevia = req._parsedUrl._raw;
-                // console.log(req.baseUrl)
-                //console.log(req.url)
-
-            //console.dir(pedido._raw);
-            // console.dir(pedido.query);
-            // console.dir(pedido.search);
-            //console.dir(pedido.busqueda);
-            // console.dir(Object.getOwnPropertyNames(pedido))
-            // console.log(Object.keys(pedido));
-            //  console.dir(pedido)
-
-            //console.dir(response);
-            // console.log(response.data.Search[1]); //Array cuando recibo muchos elementos
+            anios = [];
+            pedido = req.body.busqueda;
             //Si recibo respuesta, continuo, sino rechazo la promesa 
             if (response.data.Response == 'True') {
                 //Si recibo array de resultados, lo guardo, sino guardo la data del elemento
-                data = response.data.Search ? response.data.Search : response.data;
+                if (response.data.Search) {
+                    data = response.data.Search
+                    console.dir(data)
+                    data.forEach(element => {
+                        //Si no tengo poster, le pongo esta imagen que avisa que no hay poster
+                        if (element.Poster == 'N/A') element.Poster = "/resources/no_imagen.png";
+                        if (!anios.includes(element.Year)) anios.push(element.Year);
+                        if (element.Type == 'game') element.Type = '';
+                    });
+                } else {
+                    data = response.data;
+                }
                 resultados = response.data.totalResults;
-
-                response.data.Search.forEach(element => { anios.push(element.Year) });
-                anios = Object.values(anios);
-                // console.dir(anios);
             } else {
-                //console.dir(response);
                 throw new Error(response.data.Error);
-
             }
-
-
-            //   console.dir(response.data);
-
         })
         .catch(function(error) {
-            let msjError;
             if (error.response) {
                 // The request was made and the server responded with a status code
                 // that falls out of the range of 2xx
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
+                //console.log(error.response.data);
+                //console.log(error.response.status);
+                //console.log(error.response.headers);
                 msjError = error.response;
             } else if (error.request) {
                 // The request was made but no response was received
@@ -136,20 +114,43 @@ app.get('/bla', function(req, res) {
                 console.log(`Mensaje de Error: ${error.message}`);
                 msjError = error.message;
             }
-            //res.send(JSON.stringify(msjError));
             res.render('home', { error: msjError }); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
         })
         .finally(function() {
-            console.log("finally, data enviada");
-            // console.dir(data);
-            // if (data) res.send(JSON.stringify(data)); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
-            //   console.dir(data[0])
-            console.log(typeof data)
-            console.log(typeof anios);
-            //  console.dir("aca ta " + urlPrevia);
-            if (data) res.render('peliculas', { listaPeliculas: data, resultados: resultados, anios: anios, pedidos: pedidos }); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
+            //Si no hay msj de error, prosigamos, sino el finally siempre se ejecuta.
+            if (!msjError) {
+                //Si la data es un array de datos, paso la lista a la vista y la cantidad de resultados (es solo para la alerta que muestra la cantidad de resultados)
+                if (Array.isArray(data)) {
+                    res.render('peliculas', { listaPeliculas: data, resultados: resultados, pedido: pedido, anios: anios }); //Sin este if, node me da Unhandled promise rejection cuando recibo no recibo data pero si msjerror
+                } else {
+                    //Si no he recibido un array en data, es porque el request es de una sola peli, renderizo la vista.
+                    //Los ratings vienen en 3 formatos, cada uno lo maneje diferente para transformar su value a un entero correspondiente al %
+                    data.Ratings.forEach(element => {
+                        if (element.Source == 'Internet Movie Database') {
+                            //Divido el string, en res[0] tengo el score actual, en res[1] tengo el valor total sobre el cual se divide el score actual
+                            let res = element.Value.split("/");
+                            element.Value = Math.round(res[0] / res[1] * 100)
+                        } else if (element.Source == 'Rotten Tomatoes') {
+                            let res = element.Value.split("%");
+                            element.Value = parseInt(res[0])
+                        } else if (element.Source == 'Metacritic') {
+                            element.Value = parseInt(element.Value);
+                        } else {
+                            console.log("soy algun rating que no consideraste / tenias en ese momento " + element.Value);
+                            console.error("soy algun rating que no consideraste / tenias en ese momento " + element.Value);
+                        }
 
-
+                    });
+                    //Si no tengo sitio, premios o $ ganada, quiero el string vacio para que handlebars no ponga el elemento en la vista
+                    if (data.Website == 'N/A') data.Website = '';
+                    if (data.Awards == 'N/A') data.Awards = '';
+                    if (data.BoxOffice == 'N/A') data.BoxOffice = '';
+                    if (data.Director == 'N/A') data.Director = '';
+                    if (data.Poster == 'N/A') data.Poster = '/resources/no_imagen.png';
+                    res.render('pelicula', { pelicula: data })
+                }
+            }
         });
+
 });
 app.listen(puerto, () => console.log(`Estoy en https://localhost:${puerto}/`))
